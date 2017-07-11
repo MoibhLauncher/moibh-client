@@ -1,0 +1,36 @@
+{
+  "name": "moibh-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production electron .",
+    "dev": "run-p app:dev main:dev",
+    "build": "npm run app:build",
+    "app:dev": "npm run --prefix ./app dev",
+    "app:build": "npm run --prefix ./app build",
+    "main:debug": "cross-env DEBUG_PROD=true npm run main:dev",
+    "main:dev": "cross-env NODE_ENV=development LOAD_URL=\\\"http://localhost:8888\\\" electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoibhLauncher/moibh-client.git"
+  },
+  "author": "MoibhLauncher",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/MoibhLauncher/moibh-client/issues"
+  },
+  "homepage": "https://github.com/MoibhLauncher/moibh-client#readme",
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "electron": "^1.6.11",
+    "electron-debug": "^1.2.0",
+    "npm-run-all": "^4.0.2"
+  },
+  "dependencies": {
+    "electron-devtools-installer": "^2.2.0",
+    "source-map-support": "^0.4.15"
+  }
+}
